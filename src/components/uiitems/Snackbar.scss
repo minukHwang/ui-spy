@@ -1,0 +1,22 @@
+@import '../../utils/utils';
+
+.snackbar {
+    width: 516px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 18px;
+    background-color: $yellow;
+    border: $border;
+    border-radius: 5px;
+
+    .snackbar-title {
+        font-style: italic;
+        font-size: 32px;
+    }
+
+    .snackbar-btn {
+        font-weight: 700;
+        font-size: 32px;
+    }
+}

@@ -1,0 +1,29 @@
+@import '../../utils/utils';
+
+
+
+.sticker1 {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    cursor: move;
+    transition: 0s;
+    z-index: 1;
+}
+
+.sticker2 {
+    position: absolute;
+    left: 500px;
+    top: 500px;
+    cursor: move;
+    transition: 0s;
+    z-index: 1;
+}
+
+.navigation-svg {
+    position: absolute;
+    left: 500px;
+    top: 250px;
+    z-index: 0;
+    transition: 0.5s;
+}

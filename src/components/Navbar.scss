@@ -1,0 +1,31 @@
+@import '../utils/utils';
+
+.nav-container {
+    display: flex;
+    padding: 16px $desktop-padding;
+    justify-content: space-between;
+    align-items: center;
+    left: 0;
+    right: 0;
+    background-color: black;
+    transition: 1s;
+    z-index: 0;
+
+    @include mobile {
+        padding: 16px $mobile-padding;
+    }
+}
+
+.links {
+    display: flex;
+    gap: 30px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+
+    .link-button {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

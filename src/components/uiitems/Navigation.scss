@@ -1,0 +1,30 @@
+@import '../../utils/utils';
+
+.navigation {
+    border: $border;
+    border-radius: 100px;
+    background-color: $orange;
+
+    .navigation-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        padding: 20px;
+
+        .navigation-btn {
+            display: flex;
+            border-radius: 100px;
+            border: $border;
+            transition: 0.5s;
+            cursor: pointer;
+
+            .nav-text {
+                font-size: $ui-font;
+                padding: 9.25px 14px 9.25px 5px;
+                overflow: hidden;
+                transition: 0.5s;
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@import '../../utils/utils';
+
+.contents-container {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+    .pop-up {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        transition: all 400ms cubic-bezier(.47, 1.64, .41, .8);
+    }
+
+}

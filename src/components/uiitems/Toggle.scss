@@ -1,0 +1,26 @@
+@import '../../utils/utils';
+
+.toggle-container {
+    background-color: $green;
+    display: flex;
+    align-items: center;
+    border: $border;
+    border-radius: 100px;
+    padding: 8px;
+    gap: 8px;
+
+    .toggle-btn {
+        width: 56px;
+        height: 56px;
+        left: 0;
+        top: 0;
+        border: $border;
+        border-radius: 100px;
+
+    }
+
+    .toggle-text {
+        font-size: $ui-font;
+        padding: 0 4px 0 0;
+    }
+}

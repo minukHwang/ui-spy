@@ -1,0 +1,83 @@
+@import '../utils/utils';
+
+.main-container {
+    position: relative;
+    height: calc(100vh - 51px);
+    overflow: hidden;
+}
+
+.building-wrapper {
+    width: 100%;
+    height: calc(869 / 884 * 100vw);
+    max-height: 869px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// 콘텐츠 이미지들
+.building {
+    height: 100%;
+    z-index: 2;
+}
+
+.eye-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.eye-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+}
+
+// .deco-left {
+//     position: absolute;
+//     left: 0;
+//     z-index: 3;
+// }
+
+// .deco-right {
+//     position: absolute;
+//     right: 0;
+//     z-index: 3;
+// }
+
+.deco-img-left {
+    position: absolute;
+    left: 0;
+    z-index: 3;
+
+    @include mobile {
+        background-color: red;
+        width: 50vw;
+    }
+
+}
+
+.deco-img-right {
+    position: absolute;
+    right: 0;
+    z-index: 3;
+
+    @include mobile {
+        background-color: red;
+        width: 50vw;
+    }
+}
+
+
+//반응형 테스트
+@media (max-width: 550px) {
+
+    .deco-img-left,
+    .deco-img-right {
+        width: 50vw;
+    }
+}

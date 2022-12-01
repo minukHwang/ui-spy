@@ -1,0 +1,23 @@
+@import '../../utils/utils';
+
+.breadcrumb-container {
+    background-color: $green;
+    border: $border;
+    display: flex;
+    gap: 12px;
+    padding: 8px 18px;
+    font-size: $ui-font;
+
+    .breadcrumb-link {
+        position: relative;
+
+        &:hover {
+            text-decoration: underline;
+            color: $blue;
+        }
+    }
+
+    .breadcrumb-deco {
+        color: $black;
+    }
+}

@@ -1,0 +1,15 @@
+@import '../utils/utils';
+
+.menu-container {
+    display: flex;
+    height: calc(100vh - 51px);
+    overflow: auto;
+
+    .tab-container {
+        border-right: 0.5px solid $black;
+
+        &:last-child {
+            border-right: none
+        }
+    }
+}

@@ -1,0 +1,15 @@
+@import '../utils/utils';
+
+.textbox {
+    position: absolute;
+    z-index: 9;
+    font-size: 24px;
+    padding: 30px 40px;
+
+    .textbox-serif {
+        font-family: 'Times New Roman', Times, serif;
+        font-style: italic;
+        display: flex;
+        gap: 8px;
+    }
+}

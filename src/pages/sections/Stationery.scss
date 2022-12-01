@@ -1,0 +1,46 @@
+@import '../../utils/utils';
+
+.main-container {
+    .snackbar {
+        position: absolute;
+        left: 350px;
+        top: 150px;
+    }
+}
+
+.pencil-holder {
+    position: absolute;
+    left: 150px;
+    top: 150px;
+    cursor: none;
+
+    .pencil {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+
+    .pencil-shadow {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.snackbar-holder {
+    position: absolute;
+    left: 350px;
+    top: 150px;
+    transition: 0.5s;
+    cursor: none;
+
+    .snackbar-svg {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .snackbar-shadow {
+        left: 0;
+        top: 0;
+    }
+}

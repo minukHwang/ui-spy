@@ -1,0 +1,55 @@
+@import '../utils/utils';
+
+.tab-container {
+    position: relative;
+    cursor: pointer;
+
+    .sign-area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .lines {
+            height: 85px;
+            width: 313px;
+            border-left: $border;
+            border-right: $border;
+        }
+
+        .sign-container {
+
+            .sign-border {
+                padding: 5px;
+                background-color: white;
+                border: $border;
+
+                .sign {
+                    width: 323px;
+                    padding: 20px;
+                    background-color: aqua;
+                    border: $border;
+
+                    font-family: 'SF Pro';
+                    font-size: 64px;
+                    font-weight: 400;
+                    line-height: 64px;
+                    text-align: center;
+                    color: white;
+                    text-shadow: $text-border;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 900px) {
+        position: relative;
+        overflow: hidden;
+        flex: 1;
+    }
+
+    @include mobile {
+
+        width: 500px;
+    }
+}

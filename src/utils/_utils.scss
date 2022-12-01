@@ -1,0 +1,48 @@
+/*
+변수
+*/
+
+//색깔
+$orange: #FF5C00;
+$blue: #0066FF;
+$green: #00B026;
+$pink: #FF85D5;
+$yellow: #FFD600;
+$red: #FF0400;
+$white: #FFFFFF;
+$black: #000000;
+$light-gray: #EDEDED;
+
+// padding
+$mobile-padding: 20px;
+$desktop-padding: 40px;
+
+
+//반응형 화면 크기
+$mobile: 400px;
+
+//윤곽선
+$border: 0.75px solid $black;
+$text-border: -0.75px 0 $black, 0 0.75px $black, 0.75px 0 $black, 0 -0.75px $black;
+
+//콘테이너 높이
+$nav-height : 51px;
+$container-height : calc(100vh - 51px);
+
+// 폰트 크기
+$ui-font : 32px;
+
+/*
+미디어 쿼리
+*/
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $mobile) {
+        @content;
+    }
+}

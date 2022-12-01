@@ -1,0 +1,42 @@
+@import '../../utils/utils';
+
+.pop-up {
+    background-color: $pink;
+    border: $border;
+    border-radius: 15px;
+    transition: 1s;
+    width: 431.5px;
+    height: 314.25px;
+
+    .pop-up-top {
+        width: 360px;
+        height: 150px;
+        padding: 35px;
+        display: flex;
+        justify-content: space-between;
+
+
+        .pop-up-text {
+            font-size: 64px;
+        }
+
+        .close-btn {}
+    }
+
+    .pop-up-btns {
+        cursor: pointer;
+        display: flex;
+        border-top: $border;
+
+        .pop-up-btn {
+            flex: 1;
+            padding: 25px;
+            font-size: 35px;
+            text-align: center;
+
+            &:last-child {
+                border-left: $border;
+            }
+        }
+    }
+}
