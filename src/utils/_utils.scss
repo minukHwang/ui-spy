@@ -32,6 +32,9 @@ $container-height : calc(100vh - 51px);
 // 폰트 크기
 $ui-font : 32px;
 
+//transition
+$bounce : all 400ms cubic-bezier(.47, 1.64, .41, .8);
+
 /*
 미디어 쿼리
 */

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Sticker.scss";
 import TextBox from "../../components/TextBox";
 import { ReactComponent as Sticker1 } from "../../static/svg/stickers/1.svg";
@@ -8,7 +8,7 @@ import { ReactComponent as Navigation } from "../../static/svg/stickers/navigati
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Sticker = ({ colors }) => {
+const Sticker = ({ colors, setMenuHidden }) => {
   const [allowMove, setAllowMove] = useState();
   const stickerRef1 = useRef();
   const stickerRef2 = useRef();
@@ -18,6 +18,10 @@ const Sticker = ({ colors }) => {
   const [dZIndex, setDZIndex] = useState(1);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setMenuHidden(false);
+  }, []);
 
   const goToPage = (title) => {
     navigate(`/${title}`);

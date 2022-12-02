@@ -3,7 +3,7 @@ import CloseBtn from "../../components/CloseBtn";
 import Popup from "../../components/uiitems/Popup";
 import "./PopupPage.scss";
 
-const PopupPage = ({ colors }) => {
+const PopupPage = ({ colors, setMenuHidden }) => {
   const pink = "#FF85D5";
   const orange = "#FF5C00";
   const yellow = "#FFD600";
@@ -14,6 +14,10 @@ const PopupPage = ({ colors }) => {
 
   const [popups, setPopups] = useState([[0, "50%", "50%", colors[0]]]);
   console.log(popups);
+
+  useEffect(() => {
+    setMenuHidden(true);
+  }, []);
 
   return (
     <div

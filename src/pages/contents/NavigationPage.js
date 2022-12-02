@@ -2,8 +2,12 @@ import React from "react";
 import "./NavigationPage.scss";
 import CloseBtn from "../../components/CloseBtn";
 import Navigation from "../../components/uiitems/Navigation";
+import { useEffect } from "react";
 
-const NavigationPage = ({ backgroundColor }) => {
+const NavigationPage = ({ backgroundColor, setMenuHidden }) => {
+  useEffect(() => {
+    setMenuHidden(true);
+  }, []);
   return (
     <div
       className="contents-container"

@@ -2,15 +2,23 @@ import React from "react";
 import "./TogglePage.scss";
 import CloseBtn from "../../components/CloseBtn";
 import Toggle from "../../components/uiitems/Toggle";
+import { useEffect } from "react";
 
-const TogglePage = ({ backgroundColor }) => {
+const TogglePage = ({ colors, setMenuHidden }) => {
+  useEffect(() => {
+    setMenuHidden(true);
+  }, []);
   return (
     <div
       className="contents-container"
-      style={{ backgroundColor: backgroundColor }}
+      style={{ backgroundColor: colors.green }}
     >
       <Toggle></Toggle>
-      <CloseBtn linkTo="sticker"></CloseBtn>
+      <CloseBtn
+        linkTo="sticker"
+        color={colors.green}
+        hoverColor={colors.orange}
+      ></CloseBtn>
     </div>
   );
 };

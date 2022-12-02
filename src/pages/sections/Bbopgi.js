@@ -23,7 +23,7 @@ import { useNavigate } from "react-router-dom";
 import { ReactComponent as Handle } from "../../static/svg/handle.svg";
 import { ReactComponent as EyeOrange } from "../../static/svg/eye-orange.svg";
 
-const Bbopgi = ({ colors, isMenu, setIsMenu }) => {
+const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden }) => {
   const canvasRef = useRef(null);
   const handleRef = useRef();
   const holderRef = useRef();
@@ -81,11 +81,9 @@ const Bbopgi = ({ colors, isMenu, setIsMenu }) => {
 
   //matter.js
   useEffect(() => {
+    setMenuHidden(false);
     setIsMenu(false);
     const canvas = canvasRef.current;
-
-    // Engine
-    engine.world.gravity.y = 2;
 
     // Renderer
     const render = Render.create({
@@ -197,7 +195,6 @@ const Bbopgi = ({ colors, isMenu, setIsMenu }) => {
       },
     };
 
-    console.log(popup);
     // MouseConstraint
     let mouse = Mouse.create(render.canvas);
     let mouseConstraint = MouseConstraint.create(engine, {
@@ -287,6 +284,11 @@ const Bbopgi = ({ colors, isMenu, setIsMenu }) => {
 
     // run the engine
     Runner.run(runner, engine);
+
+    (function rerender() {
+      Engine.update(engine);
+      requestAnimationFrame(rerender);
+    })();
 
     // unmount
     return () => {

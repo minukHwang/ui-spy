@@ -2,8 +2,12 @@ import React from "react";
 import "./BreadcrumbPage.scss";
 import CloseBtn from "../../components/CloseBtn";
 import Breadcrumb from "../../components/uiitems/Breadcrumb";
+import { useEffect } from "react";
 
-const BreadcrumbPage = ({ backgroundColor }) => {
+const BreadcrumbPage = ({ backgroundColor, setMenuHidden }) => {
+  useEffect(() => {
+    setMenuHidden(true);
+  }, []);
   return (
     <div
       className="contents-container"

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ButtonPage.scss";
 import CloseBtn from "../../components/CloseBtn";
 import Button from "../../components/uiitems/Button";
 import { ReactComponent as Arrow } from "../../static/svg/arrow.svg";
 
-const ButtonPage = ({ colors }) => {
+const ButtonPage = ({ colors, setMenuHidden }) => {
   const [clickedNum, setClickedNum] = useState(0);
   const contents = [
     "Don't Click This Button.",
@@ -14,6 +14,10 @@ const ButtonPage = ({ colors }) => {
     "Whatever, I don’t care",
     "I’m just going to count it.",
   ];
+
+  useEffect(() => {
+    setMenuHidden(true);
+  }, []);
 
   return (
     <div

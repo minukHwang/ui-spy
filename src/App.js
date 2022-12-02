@@ -30,6 +30,7 @@ function App() {
   };
 
   const [isMenu, setIsMenu] = useState(false);
+  const [menuHidden, setMenuHidden] = useState(false);
 
   useEffect(() => {
     console.log(isMenu);
@@ -44,49 +45,105 @@ function App() {
     return isMobile ? children : null;
   };
   return (
-    <div className="stop-dragging">
-      <Mobile>
-        <Navbar isMenu={isMenu} setIsMenu={setIsMenu}></Navbar>
-      </Mobile>
+    <div className="main stop-dragging">
+      {menuHidden ? (
+        ""
+      ) : (
+        <Mobile>
+          <Navbar
+            isMenu={isMenu}
+            menuHidden={menuHidden}
+            setIsMenu={setIsMenu}
+            setMenuHidden={setMenuHidden}
+          ></Navbar>
+        </Mobile>
+      )}
       <Routes>
-        <Route path="/" element={<Home colors={colors} />} />
-        <Route path="/menu" element={<Menu colors={colors} />} />
+        <Route
+          path="/"
+          element={<Home colors={colors} setMenuHidden={setMenuHidden} />}
+        />
+        <Route
+          path="/menu"
+          element={<Menu colors={colors} setMenuHidden={setMenuHidden} />}
+        />
         <Route
           path="/bbopgi"
           element={
-            <Bbopgi colors={colors} isMenu={isMenu} setIsMenu={setIsMenu} />
+            <Bbopgi
+              colors={colors}
+              isMenu={isMenu}
+              setIsMenu={setIsMenu}
+              setMenuHidden={setMenuHidden}
+            />
           }
         />
-        <Route path="/stationery" element={<Stationery colors={colors} />} />
-        <Route path="/sticker" element={<Sticker colors={colors} />} />
-        <Route path="/bbopgi/popup" element={<PopupPage colors={colors} />} />
-        <Route path="/bbopgi/input" element={<InputPage colors={colors} />} />
-        <Route path="/bbopgi/button" element={<ButtonPage colors={colors} />} />
+        <Route
+          path="/stationery"
+          element={<Stationery colors={colors} setMenuHidden={setMenuHidden} />}
+        />
+        <Route
+          path="/sticker"
+          element={<Sticker colors={colors} setMenuHidden={setMenuHidden} />}
+        />
+        <Route
+          path="/bbopgi/popup"
+          element={<PopupPage colors={colors} setMenuHidden={setMenuHidden} />}
+        />
+        <Route
+          path="/bbopgi/input"
+          element={<InputPage colors={colors} setMenuHidden={setMenuHidden} />}
+        />
+        <Route
+          path="/bbopgi/button"
+          element={<ButtonPage colors={colors} setMenuHidden={setMenuHidden} />}
+        />
         <Route
           path="/stationery/snackbar"
-          element={<SnackbarPage colors={colors} />}
+          element={
+            <SnackbarPage colors={colors} setMenuHidden={setMenuHidden} />
+          }
         />
-        <Route path="/stationery/menu" element={<MenuPage />} colors={colors} />
+        <Route
+          path="/stationery/menu"
+          element={<MenuPage colors={colors} setMenuHidden={setMenuHidden} />}
+        />
         <Route
           path="/stationery/breadcrumb"
-          element={<BreadcrumbPage colors={colors} />}
+          element={
+            <BreadcrumbPage colors={colors} setMenuHidden={setMenuHidden} />
+          }
         />
         <Route
           path="/sticker/navigation"
-          element={<NavigationPage colors={colors} />}
+          element={
+            <NavigationPage colors={colors} setMenuHidden={setMenuHidden} />
+          }
         />
         <Route
           path="/sticker/carousel"
-          element={<CarouselPage colors={colors} />}
+          element={
+            <CarouselPage colors={colors} setMenuHidden={setMenuHidden} />
+          }
         />
         <Route
           path="/sticker/toggle"
-          element={<TogglePage colors={colors} />}
+          element={<TogglePage colors={colors} setMenuHidden={setMenuHidden} />}
         />
       </Routes>
-      <Desktop>
-        <Navbar isMenu={isMenu} setIsMenu={setIsMenu}></Navbar>
-      </Desktop>
+
+      {menuHidden ? (
+        ""
+      ) : (
+        <Desktop>
+          <Navbar
+            isMenu={isMenu}
+            setIsMenu={setIsMenu}
+            menuHidden={menuHidden}
+            setMenuHidden={setMenuHidden}
+          ></Navbar>
+        </Desktop>
+      )}
     </div>
   );
 }

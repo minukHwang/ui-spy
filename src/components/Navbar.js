@@ -3,11 +3,9 @@ import "./Navbar.scss";
 import { ReactComponent as Logo } from "../static/svg/Logo.svg";
 import { useNavigate } from "react-router-dom";
 
-const Navbar = ({ isMenu, setIsMenu }) => {
+const Navbar = ({ isMenu, setIsMenu, menuHidden, setMenuHidden }) => {
   const navRef = useRef();
-  useEffect(() => {
-    console.log(isMenu);
-  }, [isMenu]);
+
   const navigate = useNavigate();
 
   const goToPage = (title) => {
