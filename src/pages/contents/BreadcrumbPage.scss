@@ -7,5 +7,51 @@
         top: 50%;
         transform: translate(-50%, -50%);
         z-index: 10;
+
+        .breadcrumb-link {
+            &.one {
+                &:hover {
+                    text-decoration: underline;
+                    color: $orange;
+                }
+            }
+
+            &.two {
+                &:hover {
+                    text-decoration: underline;
+                    color: $blue;
+                }
+            }
+
+            &.three {
+                &:hover {
+                    text-decoration: underline;
+                    color: $green;
+                }
+            }
+
+            &.four {
+                &:hover {
+                    text-decoration: underline;
+                    color: $pink;
+                }
+            }
+        }
+    }
+
+    .folder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        left: 0;
+        top: 0%;
+        transition: all 400ms cubic-bezier(.47, 1.64, .41, .8);
+    }
+
+    path {
+        vector-effect: non-scaling-stroke;
     }
 }

@@ -4,6 +4,13 @@
     position: relative;
     height: calc(100vh - 51px);
     overflow: hidden;
+
+    @include mobile {
+        position: absolute;
+        top: 51px;
+        background-color: red;
+        width: 100vw;
+    }
 }
 
 .building-wrapper {

@@ -5,6 +5,13 @@
     height: calc(100vh - 51px);
     overflow: auto;
 
+    @include mobile {
+        position: absolute;
+        top: 51px;
+        background-color: red;
+        width: 100vw;
+    }
+
     .tab-container {
         border-right: 0.5px solid $black;
 

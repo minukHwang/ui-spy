@@ -77,31 +77,36 @@ const Sticker = ({ colors, setMenuHidden }) => {
   };
 
   return (
-    <div className="main-container" style={{ backgroundColor: colors.yellow }}>
-      <TextBox item={["popup", "input", "button"]}></TextBox>
-      <Sticker1
-        ref={stickerRef1}
-        className="sticker1"
-        onMouseDown={(e) => handleMouseDown(e, stickerRef1)}
-        onMouseMove={(e) => handleMouseMove(e, stickerRef1)}
-        onMouseLeave={(e) => handleMouseMove(e, stickerRef1)}
-        onMouseUp={(e) => handleMouseUp(stickerRef1)}
-      ></Sticker1>
-      <Sticker2
-        className="sticker2"
-        ref={stickerRef2}
-        onMouseDown={(e) => handleMouseDown(e, stickerRef2)}
-        onMouseMove={(e) => handleMouseMove(e, stickerRef2)}
-        onMouseLeave={(e) => handleMouseMove(e, stickerRef2)}
-        onMouseUp={(e) => handleMouseUp(stickerRef2)}
-      ></Sticker2>
-      <Navigation
-        ref={navigationRef}
-        className="navigation-svg"
-        onClick={(e) =>
-          handleDoubleClick(e, navigationRef, "sticker/navigation")
-        }
-      ></Navigation>
+    <div className="page-container">
+      <div
+        className="main-container"
+        style={{ backgroundColor: colors.yellow }}
+      >
+        <TextBox item={["popup", "input", "button"]}></TextBox>
+        <Sticker1
+          ref={stickerRef1}
+          className="sticker1"
+          onMouseDown={(e) => handleMouseDown(e, stickerRef1)}
+          onMouseMove={(e) => handleMouseMove(e, stickerRef1)}
+          onMouseLeave={(e) => handleMouseMove(e, stickerRef1)}
+          onMouseUp={(e) => handleMouseUp(stickerRef1)}
+        ></Sticker1>
+        <Sticker2
+          className="sticker2"
+          ref={stickerRef2}
+          onMouseDown={(e) => handleMouseDown(e, stickerRef2)}
+          onMouseMove={(e) => handleMouseMove(e, stickerRef2)}
+          onMouseLeave={(e) => handleMouseMove(e, stickerRef2)}
+          onMouseUp={(e) => handleMouseUp(stickerRef2)}
+        ></Sticker2>
+        <Navigation
+          ref={navigationRef}
+          className="navigation-svg"
+          onClick={(e) =>
+            handleDoubleClick(e, navigationRef, "sticker/navigation")
+          }
+        ></Navigation>
+      </div>
     </div>
   );
 };

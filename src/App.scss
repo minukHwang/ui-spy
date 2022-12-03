@@ -1,5 +1,6 @@
 html {
     height: 100vh;
+    box-sizing: border-box;
 }
 
 
@@ -14,4 +15,11 @@ body {
     -khtml-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+}
+
+.page-container {
+    position: absolute;
+    width: 100vw;
+    height: calc(100vh - 51px);
+    z-index: 10;
 }

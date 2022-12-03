@@ -303,11 +303,7 @@ const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden }) => {
   }, []);
 
   return (
-    <div
-      className="canvas-container"
-      ref={containerRef}
-      style={{ backgroundColor: colors.blue }}
-    >
+    <div className="page-container">
       {isUiUpdated ? (
         <div className="ui-holder" ref={holderRef}>
           <Popup data-html-matter></Popup>
@@ -316,26 +312,36 @@ const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden }) => {
         ""
       )}
       {isUiUpdated ? (
-        <div className="transition-container" ref={transitionRef}>
+        <div
+          className="transition-container"
+          ref={transitionRef}
+          style={{ backgroundColor: colors.blue }}
+        >
           {" "}
         </div>
       ) : (
         ""
       )}
-      <TextBox item={["popup", "input", "button"]}></TextBox>
-      <div className="handle-wall">
-        <div className="handle-holder">
-          <Handle
-            className="handle"
-            ref={handleRef}
-            onClick={handleClick}
-          ></Handle>
-        </div>
-        {/* <div className="bbopgi-exit">
+      <div
+        className="canvas-container"
+        ref={containerRef}
+        style={{ backgroundColor: colors.blue }}
+      >
+        <TextBox item={["popup", "input", "button"]}></TextBox>
+        <div className="handle-wall">
+          <div className="handle-holder">
+            <Handle
+              className="handle"
+              ref={handleRef}
+              onClick={handleClick}
+            ></Handle>
+          </div>
+          {/* <div className="bbopgi-exit">
           <EyeOrange className="eye-orange"></EyeOrange>
         </div> */}
+        </div>
+        <canvas className="bbopgi-canvas" ref={canvasRef}></canvas>
       </div>
-      <canvas ref={canvasRef}></canvas>
     </div>
   );
 };

@@ -18,6 +18,7 @@ const Stationery = ({ colors, setMenuHidden }) => {
   const lightRef = useRef();
   const lightRef2 = useRef();
   const snackbarRef = useRef();
+  const transitionRef = useRef();
 
   const navigate = useNavigate();
 
@@ -102,55 +103,77 @@ const Stationery = ({ colors, setMenuHidden }) => {
       object.current.style.left = "50%";
       object.current.style.translate = "-50% -50%";
       object.current.style.cursor = "default";
+      object.current.style.zIndex = "12";
+
+      setTimeout(() => {
+        transitionRef.current.style.left = "0%";
+        //containerRef.current.style.backgroundColor = colors.pink;
+      }, 50);
 
       setTimeout(() => {
         goToPage(linkTo);
-      }, 1000);
+      }, 3000);
     }
   };
 
   return (
-    <div className="main-container" style={{ backgroundColor: colors.orange }}>
-      <TextBox item={["popup", "input", "button"]}></TextBox>
+    <div className="page-container">
+      {allowClicked ? (
+        <div
+          className="transition-container"
+          ref={transitionRef}
+          style={{ backgroundColor: colors.yellow }}
+        >
+          {" "}
+        </div>
+      ) : (
+        ""
+      )}
       <div
-        className="pencil-holder"
-        ref={pencilRef}
-        onMouseEnter={(e) => handleEnter(e, lightRef, pencilRef)}
-        onMouseMove={(e) => handleOver(e, lightRef, pencilRef)}
-        onMouseLeave={(e) => handleLeave(e, lightRef, pencilRef)}
-        onMouseDown={(e) => handleClick(e, lightRef, pencilRef, false)}
+        className="main-container"
+        style={{ backgroundColor: colors.orange }}
       >
-        <PencilShadow className="pencil-shadow"></PencilShadow>
-        <Pencil
-          ref={lightRef}
-          style={{ clipPath: `circle(0% at ${50}% ${50}%)` }}
-          className="pencil"
-        ></Pencil>
-      </div>
+        <TextBox item={["popup", "input", "button"]}></TextBox>
+        <div
+          className="pencil-holder"
+          ref={pencilRef}
+          onMouseEnter={(e) => handleEnter(e, lightRef, pencilRef)}
+          onMouseMove={(e) => handleOver(e, lightRef, pencilRef)}
+          onMouseLeave={(e) => handleLeave(e, lightRef, pencilRef)}
+          onMouseDown={(e) => handleClick(e, lightRef, pencilRef, false)}
+        >
+          <PencilShadow className="pencil-shadow"></PencilShadow>
+          <Pencil
+            ref={lightRef}
+            style={{ clipPath: `circle(0% at ${50}% ${50}%)` }}
+            className="pencil"
+          ></Pencil>
+        </div>
 
-      <div
-        className="snackbar-holder"
-        ref={snackbarRef}
-        onMouseEnter={(e) => handleEnter(e, lightRef2, snackbarRef)}
-        onMouseMove={(e) => handleOver(e, lightRef2, snackbarRef)}
-        onMouseLeave={(e) => handleLeave(e, lightRef2, snackbarRef)}
-        onMouseDown={(e) => handleClick(e, lightRef2, snackbarRef, true)}
-        onClick={(e) =>
-          handleDoubleClick(e, lightRef2, snackbarRef, "stationery/snackbar")
-        }
-      >
-        <SnackbarShadow className="snackbar-shadow"></SnackbarShadow>
-        <SnackbarSvg
-          ref={lightRef2}
-          style={{ clipPath: `circle(0% at ${50}% ${50}%)` }}
-          className="snackbar-svg"
-        ></SnackbarSvg>
-      </div>
-      {/* <Snackbar
+        <div
+          className="snackbar-holder"
+          ref={snackbarRef}
+          onMouseEnter={(e) => handleEnter(e, lightRef2, snackbarRef)}
+          onMouseMove={(e) => handleOver(e, lightRef2, snackbarRef)}
+          onMouseLeave={(e) => handleLeave(e, lightRef2, snackbarRef)}
+          onMouseDown={(e) => handleClick(e, lightRef2, snackbarRef, true)}
+          onClick={(e) =>
+            handleDoubleClick(e, lightRef2, snackbarRef, "stationery/snackbar")
+          }
+        >
+          <SnackbarShadow className="snackbar-shadow"></SnackbarShadow>
+          <SnackbarSvg
+            ref={lightRef2}
+            style={{ clipPath: `circle(0% at ${50}% ${50}%)` }}
+            className="snackbar-svg"
+          ></SnackbarSvg>
+        </div>
+        {/* <Snackbar
         contents="Snackbar"
         button="Yes"
         className="snackbar"
       ></Snackbar> */}
+      </div>
     </div>
   );
 };

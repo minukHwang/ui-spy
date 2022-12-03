@@ -1,7 +1,7 @@
 @import '../../utils/utils';
 
 .breadcrumb-container {
-    background-color: $green;
+    background-color: $yellow;
     border: $border;
     display: flex;
     gap: 12px;
@@ -10,11 +10,7 @@
 
     .breadcrumb-link {
         position: relative;
-
-        &:hover {
-            text-decoration: underline;
-            color: $blue;
-        }
+        color: $black;
     }
 
     .breadcrumb-deco {

@@ -204,7 +204,7 @@ const InputPage = ({ colors, setMenuHidden }) => {
         color={colors.yellow}
         hoverColor={colors.blue}
       ></CloseBtn>
-      <canvas ref={canvasRef}></canvas>
+      <canvas className="input-canvas" ref={canvasRef}></canvas>
       {textInput &&
         textInput.map((item, index) => (
           <div ref={(el) => addToRefs(el)} className="text-box" key={index}>

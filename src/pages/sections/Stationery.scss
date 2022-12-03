@@ -44,3 +44,13 @@
         top: 0;
     }
 }
+
+
+.transition-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 100%;
+    z-index: 10;
+    transition: cubic-bezier(1, -0.01, .19, .99) 2s;
+}

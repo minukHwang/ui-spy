@@ -18,7 +18,7 @@ import {
 } from "matter-js";
 
 const SnackbarPage = ({ colors, setMenuHidden }) => {
-  let snackbarMove = 1;
+  let snackbarMove = false;
 
   const [isRain, setIsRain] = useState(false);
 
@@ -199,8 +199,8 @@ const SnackbarPage = ({ colors, setMenuHidden }) => {
   };
 
   const handleClick = (e) => {
-    snackbarMove += 1;
-    if (snackbarMove % 2 === 0) {
+    snackbarMove = !snackbarMove;
+    if (snackbarMove === true) {
       snackbarRef.current.style.top = "85%";
       snackbarRef.current.style.transition =
         "all 500ms cubic-bezier(.47, 1.64, .41, .8)";
@@ -228,7 +228,7 @@ const SnackbarPage = ({ colors, setMenuHidden }) => {
           Yes
         </div>
       </div> */}
-      <canvas ref={canvasRef}></canvas>
+      <canvas className="snackbar-canvas" ref={canvasRef}></canvas>
       <CloseBtn
         linkTo="stationery"
         color={colors.orange}

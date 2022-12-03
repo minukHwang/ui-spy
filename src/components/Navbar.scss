@@ -1,6 +1,8 @@
 @import '../utils/utils';
 
 .nav-container {
+    position: absolute;
+    bottom: 0;
     display: flex;
     padding: 16px $desktop-padding;
     justify-content: space-between;
@@ -9,9 +11,10 @@
     right: 0;
     background-color: black;
     transition: 1s;
-    z-index: 0;
 
     @include mobile {
+        top: 0;
+        bottom: auto;
         padding: 16px $mobile-padding;
     }
 }

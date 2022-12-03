@@ -1,26 +1,43 @@
 @import '../../utils/utils';
 
 .toggle-container {
+    width: 174px;
+    height: 72px;
+    position: relative;
     background-color: $green;
-    display: flex;
-    align-items: center;
     border: $border;
     border-radius: 100px;
-    padding: 8px;
-    gap: 8px;
 
     .toggle-btn {
+        background-color: $green;
+        position: absolute;
         width: 56px;
         height: 56px;
-        left: 0;
-        top: 0;
+        left: 8px;
+        top: 50%;
+        transform: translate(0, -50%);
         border: $border;
         border-radius: 100px;
-
+        z-index: 1;
+        transition: $bounce;
     }
 
     .toggle-text {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translate(0, -50%);
         font-size: $ui-font;
         padding: 0 4px 0 0;
+        transition: $bounce;
+    }
+
+    .cover-elem {
+        background-color: $green;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        transition: $bounce;
+        border-radius: 100px;
     }
 }
