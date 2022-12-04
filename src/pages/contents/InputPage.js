@@ -22,6 +22,7 @@ const InputPage = ({ colors, setMenuHidden }) => {
   const addToRefs = (el) => {
     el && textRefs.current.push(el);
   };
+  console.log(textRefs);
 
   const inputRef = useRef();
   const canvasRef = useRef();
@@ -30,42 +31,71 @@ const InputPage = ({ colors, setMenuHidden }) => {
 
   const pixelRatio = window.devicePixelRatio;
   const engine = Engine.create();
+  const colorSet = [
+    colors.pink,
+    colors.blue,
+    colors.green,
+    colors.yellow,
+    colors.red,
+  ];
+
+  const handleBall = (e) => {
+    setTimeout(() => {
+      if (e.key === "Enter") {
+        let textRef =
+          textRefs.current[textRefs.current.length - 1] &&
+          textRefs.current[textRefs.current.length - 1];
+        let widthRef =
+          textRefs.current[textRefs.current.length - 1] &&
+          textRefs.current[textRefs.current.length - 1].offsetWidth;
+
+        console.log(widthRef);
+        console.log(textRef);
+
+        textRef.style.width = `${widthRef + 50}px`;
+        textRef.style.height = `${widthRef + 50}px`;
+        textRef.style.backgroundColor = colorSet[Math.floor(Math.random() * 5)];
+
+        const textBall = {
+          r: widthRef,
+          body: Bodies.circle(
+            (window.innerWidth * pixelRatio) / 2,
+            0,
+            widthRef + 50,
+            {
+              restitution: 1,
+              friction: 0.1,
+              render: {
+                fillStyle: "transparent",
+                //lineWidth: 1,
+                //strokeStyle: "black",
+              },
+            }
+          ),
+          elem: textRef,
+          render() {
+            const x = this.body.position.x / pixelRatio;
+            const y = this.body.position.y / pixelRatio;
+            this.elem.style.top = `${y - this.r / 2 - 25}px`;
+            this.elem.style.left = `${x - this.r / 2 - 25}px`;
+            this.elem.style.transform = `rotate(${this.body.angle}rad)`;
+          },
+        };
+
+        Composite.add(engine.world, [textBall.body]);
+        (function rerender() {
+          textBall.render();
+          //input.render();
+          Engine.update(engine);
+          requestAnimationFrame(rerender);
+        })();
+      }
+    }, 50);
+  };
+  //.onkeypress = handleClick;
 
   useEffect(() => {
-    let textRef =
-      textRefs.current[textRefs.current.length - 1] &&
-      textRefs.current[textRefs.current.length - 1];
-    let widthRef =
-      textRefs.current[textRefs.current.length - 1] &&
-      textRefs.current[textRefs.current.length - 1].offsetWidth;
-
-    console.log(widthRef);
-    console.log(textRef);
-
-    const textBall = {
-      r: widthRef,
-      body: Bodies.circle((window.innerWidth * pixelRatio) / 3, 0, 225, {
-        restitution: 1,
-        friction: 0.1,
-      }),
-      elem: textRef,
-      // render() {
-      //   const x = this.body.position.x / pixelRatio;
-      //   const y = this.body.position.y / pixelRatio;
-      //   this.elem.style.top = `${y - this.r / 2}px`;
-      //   this.elem.style.left = `${x - this.r / 2}px`;
-      //   this.elem.style.transform = `rotate(${this.body.angle}rad)`;
-      // },
-    };
-
-    Composite.add(engine.world, [textBall.body]);
-    (function rerender() {
-      Engine.update(engine);
-      requestAnimationFrame(rerender);
-    })();
-  }, [textInput]);
-
-  useEffect(() => {
+    inputRef.current.firstChild.onkeypress = (e) => handleBall(e);
     setMenuHidden(true);
     const canvas = canvasRef.current;
 
@@ -79,7 +109,7 @@ const InputPage = ({ colors, setMenuHidden }) => {
         width: window.innerWidth * pixelRatio,
       },
     });
-
+    engine.world.gravity.y = 1;
     const leftWall = Bodies.rectangle(
       -15,
       0,
@@ -157,7 +187,7 @@ const InputPage = ({ colors, setMenuHidden }) => {
       ground,
       leftWall,
       rightWall,
-      ball,
+      //ball,
       input.body,
       mouseConstraint,
     ]);
@@ -207,8 +237,10 @@ const InputPage = ({ colors, setMenuHidden }) => {
       <canvas className="input-canvas" ref={canvasRef}></canvas>
       {textInput &&
         textInput.map((item, index) => (
-          <div ref={(el) => addToRefs(el)} className="text-box" key={index}>
-            {item}
+          <div key={index} className="circle-container">
+            <div ref={(el) => addToRefs(el)} className="text-box" key={index}>
+              {item}
+            </div>
           </div>
         ))}
     </div>

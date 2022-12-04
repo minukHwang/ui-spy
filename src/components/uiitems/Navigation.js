@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./Navigation.scss";
 import { ReactComponent as Icon0 } from "../../static/svg/icons/nav-icon0.svg";
 import { ReactComponent as Icon1 } from "../../static/svg/icons/nav-icon1.svg";
@@ -24,21 +24,94 @@ const Navigation = ({
   const yellow = "#FFD600";
   const green = "#00B026";
   const blue = "#0066FF";
+  let clicked = true;
 
   const handleClick = (e, text, button, color) => {
-    console.log(text, color);
-    text.current.style.padding = "9.25px 14px 9.25px 5px";
-    text.current.style.fontSize = "32px";
-    button.current.style.backgroundColor = color;
+    switch (button) {
+      case buttonRef0:
+        buttonRef0.current.style.maxWidth = "167.5px";
+        buttonRef1.current.style.maxWidth = "";
+        buttonRef2.current.style.maxWidth = "";
+        buttonRef3.current.style.maxWidth = "";
+        buttonRef4.current.style.maxWidth = "";
+        buttonRef0.current.style.backgroundColor = color;
+        buttonRef1.current.style.backgroundColor = "";
+        buttonRef2.current.style.backgroundColor = "";
+        buttonRef3.current.style.backgroundColor = "";
+        buttonRef4.current.style.backgroundColor = "";
+        break;
+      case buttonRef1:
+        buttonRef0.current.style.maxWidth = "";
+        buttonRef1.current.style.maxWidth = "167.5px";
+        buttonRef2.current.style.maxWidth = "";
+        buttonRef3.current.style.maxWidth = "";
+        buttonRef4.current.style.maxWidth = "";
+        buttonRef0.current.style.backgroundColor = "";
+        buttonRef1.current.style.backgroundColor = color;
+        buttonRef2.current.style.backgroundColor = "";
+        buttonRef3.current.style.backgroundColor = "";
+        buttonRef4.current.style.backgroundColor = "";
+        break;
+      case buttonRef2:
+        buttonRef0.current.style.maxWidth = "";
+        buttonRef1.current.style.maxWidth = "";
+        buttonRef2.current.style.maxWidth = "167.5px";
+        buttonRef3.current.style.maxWidth = "";
+        buttonRef4.current.style.maxWidth = "";
+        buttonRef0.current.style.backgroundColor = "";
+        buttonRef1.current.style.backgroundColor = "";
+        buttonRef2.current.style.backgroundColor = color;
+        buttonRef3.current.style.backgroundColor = "";
+        buttonRef4.current.style.backgroundColor = "";
+        break;
+      case buttonRef3:
+        buttonRef0.current.style.maxWidth = "";
+        buttonRef1.current.style.maxWidth = "";
+        buttonRef2.current.style.maxWidth = "";
+        buttonRef3.current.style.maxWidth = "167.5px";
+        buttonRef4.current.style.maxWidth = "";
+        buttonRef0.current.style.backgroundColor = "";
+        buttonRef1.current.style.backgroundColor = "";
+        buttonRef2.current.style.backgroundColor = "";
+        buttonRef3.current.style.backgroundColor = color;
+        buttonRef4.current.style.backgroundColor = "";
+        break;
+      case buttonRef4:
+        buttonRef0.current.style.maxWidth = "";
+        buttonRef1.current.style.maxWidth = "";
+        buttonRef2.current.style.maxWidth = "";
+        buttonRef3.current.style.maxWidth = "";
+        buttonRef4.current.style.maxWidth = "167.5px";
+        buttonRef0.current.style.backgroundColor = "";
+        buttonRef1.current.style.backgroundColor = "";
+        buttonRef2.current.style.backgroundColor = "";
+        buttonRef3.current.style.backgroundColor = "";
+        buttonRef4.current.style.backgroundColor = color;
+        break;
+      default:
+    }
   };
 
-  const handleHover = (e, button, color) => {
-    button.current.style.backgroundColor = color;
-  };
+  // const handleHover = (e, button, color) => {
+  //   button.current.style.backgroundColor = color;
+  // };
 
-  const handleLeave = (e, button) => {
-    button.current.style.backgroundColor = "";
-  };
+  // const handleLeave = (e, button) => {
+  //   button.current.style.backgroundColor = "";
+  // };
+
+  useEffect(() => {
+    buttonRef0.current.style.maxWidth = "167.5px";
+    buttonRef1.current.style.maxWidth = "";
+    buttonRef2.current.style.maxWidth = "";
+    buttonRef3.current.style.maxWidth = "";
+    buttonRef4.current.style.maxWidth = "";
+    buttonRef0.current.style.backgroundColor = pink;
+    buttonRef1.current.style.backgroundColor = "";
+    buttonRef2.current.style.backgroundColor = "";
+    buttonRef3.current.style.backgroundColor = "";
+    buttonRef4.current.style.backgroundColor = "";
+  }, []);
 
   const textRef0 = useRef();
   const textRef1 = useRef();
@@ -56,13 +129,13 @@ const Navigation = ({
     <div className="navigation">
       <div className="navigation-container">
         <div
-          className="navigation-btn 0"
+          className="navigation-btn one"
           onClick={(e) => handleClick(e, textRef0, buttonRef0, pink)}
-          onMouseOver={(e) => handleHover(e, buttonRef0, pink)}
-          onMouseLeave={(e) => handleLeave(e, buttonRef0)}
+          // onMouseOver={(e) => handleHover(e, buttonRef0, pink)}
+          // onMouseLeave={(e) => handleLeave(e, buttonRef0)}
           ref={buttonRef0}
         >
-          {icon0 ? <Icon0></Icon0> : ""}
+          {icon0 ? <Icon0 className="icon"></Icon0> : ""}
           <div
             className="nav-text"
             style={{
@@ -74,13 +147,13 @@ const Navigation = ({
           </div>
         </div>
         <div
-          className="navigation-btn 1"
+          className="navigation-btn two"
           onClick={(e) => handleClick(e, textRef1, buttonRef1, red)}
-          onMouseOver={(e) => handleHover(e, buttonRef1, red)}
-          onMouseLeave={(e) => handleLeave(e, buttonRef1)}
+          // onMouseOver={(e) => handleHover(e, buttonRef1, red)}
+          // onMouseLeave={(e) => handleLeave(e, buttonRef1)}
           ref={buttonRef1}
         >
-          {icon1 ? <Icon1></Icon1> : ""}
+          {icon1 ? <Icon1 className="icon"></Icon1> : ""}
           <div
             className="nav-text"
             style={{
@@ -92,13 +165,13 @@ const Navigation = ({
           </div>
         </div>
         <div
-          className="navigation-btn 2"
+          className="navigation-btn three"
           onClick={(e) => handleClick(e, textRef2, buttonRef2, blue)}
-          onMouseOver={(e) => handleHover(e, buttonRef2, blue)}
-          onMouseLeave={(e) => handleLeave(e, buttonRef2)}
+          // onMouseOver={(e) => handleHover(e, buttonRef2, blue)}
+          // onMouseLeave={(e) => handleLeave(e, buttonRef2)}
           ref={buttonRef2}
         >
-          {icon2 ? <Icon2></Icon2> : ""}
+          {icon2 ? <Icon2 className="icon"></Icon2> : ""}
           <div
             className="nav-text"
             style={{
@@ -110,13 +183,13 @@ const Navigation = ({
           </div>
         </div>
         <div
-          className="navigation-btn 3"
+          className="navigation-btn four"
           onClick={(e) => handleClick(e, textRef3, buttonRef3, yellow)}
-          onMouseOver={(e) => handleHover(e, buttonRef3, yellow)}
-          onMouseLeave={(e) => handleLeave(e, buttonRef3)}
+          // onMouseOver={(e) => handleHover(e, buttonRef3, yellow)}
+          // onMouseLeave={(e) => handleLeave(e, buttonRef3)}
           ref={buttonRef3}
         >
-          {icon3 ? <Icon3></Icon3> : ""}
+          {icon3 ? <Icon3 className="icon"></Icon3> : ""}
           <div
             className="nav-text"
             style={{
@@ -128,13 +201,13 @@ const Navigation = ({
           </div>
         </div>
         <div
-          className="navigation-btn 4"
+          className="navigation-btn five"
           onClick={(e) => handleClick(e, textRef4, buttonRef4, green)}
-          onMouseOver={(e) => handleHover(e, buttonRef4, green)}
-          onMouseLeave={(e) => handleLeave(e, buttonRef4)}
+          // onMouseOver={(e) => handleHover(e, buttonRef4, green)}
+          // onMouseLeave={(e) => handleLeave(e, buttonRef4)}
           ref={buttonRef4}
         >
-          {icon4 ? <Icon4></Icon4> : ""}
+          {icon4 ? <Icon4 className="icon"></Icon4> : ""}
           <div
             className="nav-text"
             style={{

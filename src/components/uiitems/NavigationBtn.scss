@@ -1,0 +1,27 @@
+@import '../../utils/utils';
+
+.navigation-btn {
+    position: relative;
+    border: $border;
+    border-radius: 100px;
+    cursor: pointer;
+
+    .icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 100%;
+
+        &.0 {
+            background-color: $pink;
+        }
+
+    }
+
+    .nav-text {
+        font-size: $ui-font;
+        padding: 9.25px 14px 9.25px 5px;
+        width: 0px;
+        overflow: hidden;
+    }
+}

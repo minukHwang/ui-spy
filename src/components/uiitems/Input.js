@@ -5,6 +5,7 @@ const Input = forwardRef(({ textInput, setTextInput }, ref) => {
   const typeText = (e) => {
     if (e.key === "Enter") {
       let keyword = e.target.value;
+      e.target.value = "";
       setTextInput([...textInput, keyword]);
     }
   };

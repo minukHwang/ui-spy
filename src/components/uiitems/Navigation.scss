@@ -13,17 +13,56 @@
         padding: 20px;
 
         .navigation-btn {
+            max-width: 58px;
             display: flex;
             border-radius: 100px;
             border: $border;
-            transition: 0.5s;
+            transition: $bounce;
+            transition-property: max-width;
+            overflow: hidden;
             cursor: pointer;
 
+            &.one {
+                &:hover {
+                    background-color: $pink;
+                }
+            }
+
+            &.two {
+                &:hover {
+                    background-color: $red;
+                }
+            }
+
+            &.three {
+                &:hover {
+                    background-color: $blue;
+                }
+            }
+
+            &.four {
+                &:hover {
+                    background-color: $yellow;
+                }
+            }
+
+            &.five {
+                &:hover {
+                    background-color: $green;
+                }
+            }
+
+
+            .icon {
+                flex-shrink: 0;
+            }
+
             .nav-text {
+                text-align: center;
+                width: 89px;
                 font-size: $ui-font;
                 padding: 9.25px 14px 9.25px 5px;
-                overflow: hidden;
-                transition: 0.5s;
+                //overflow: hidden;
             }
         }
     }

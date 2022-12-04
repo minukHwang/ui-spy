@@ -4,14 +4,14 @@ import CloseBtn from "../../components/CloseBtn";
 import Navigation from "../../components/uiitems/Navigation";
 import { useEffect } from "react";
 
-const NavigationPage = ({ backgroundColor, setMenuHidden }) => {
+const NavigationPage = ({ colors, setMenuHidden }) => {
   useEffect(() => {
     setMenuHidden(true);
   }, []);
   return (
     <div
       className="contents-container"
-      style={{ backgroundColor: backgroundColor }}
+      style={{ backgroundColor: colors.pink }}
     >
       <Navigation
         className="navigation"
@@ -20,11 +20,16 @@ const NavigationPage = ({ backgroundColor, setMenuHidden }) => {
         text2="Blue"
         text3="Yellow"
         text4="Green"
-        icon0={true}
-        icon1={true}
-        icon2={true}
-        icon3={true}
-        icon4={true}
+        color0={colors.pink}
+        color1={colors.red}
+        color2={colors.blue}
+        color3={colors.yellow}
+        color4={colors.green}
+        icon0="icon0"
+        icon1="icon1"
+        icon2="icon2"
+        icon3="icon3"
+        icon4="icon4"
       ></Navigation>
       <CloseBtn linkTo="sticker"></CloseBtn>
     </div>

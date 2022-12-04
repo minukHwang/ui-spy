@@ -32,7 +32,7 @@ const Toggle = forwardRef(({ colors }, ref) => {
   const handleClick = () => {
     if (!toggleOn) {
       buttonRef.current.style.left = "calc(100% - 64px)";
-      buttonRef.current.style.backgroundColor = colors.orange;
+      buttonRef.current.style.backgroundColor = colors.green;
       //textRef.current.style.opacity = "0%";
       coverRef.current.style.width = `${textWidth + 10}px`;
       toggleOn = true;
