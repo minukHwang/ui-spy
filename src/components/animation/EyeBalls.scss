@@ -1,0 +1,14 @@
+@import "../../utils/utils";
+
+.eyeballs-animation {
+  &.left {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translate(-11%, 11%);
+    width: 40vw;
+    height: 40vw;
+    transform: translateX(-1);
+    z-index: 3;
+  }
+}

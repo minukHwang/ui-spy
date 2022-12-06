@@ -29,7 +29,11 @@ const InputPage = ({ colors, setMenuHidden }) => {
 
   const [textInput, setTextInput] = useState([]);
 
-  const pixelRatio = window.devicePixelRatio;
+  let pixelRatio = window.devicePixelRatio;
+  if (window.devicePixelRatio > 1) {
+    pixelRatio = 2;
+  }
+  console.log(pixelRatio);
   const engine = Engine.create();
   const colorSet = [
     colors.pink,
@@ -56,19 +60,21 @@ const InputPage = ({ colors, setMenuHidden }) => {
         textRef.style.height = `${widthRef + 50}px`;
         textRef.style.backgroundColor = colorSet[Math.floor(Math.random() * 5)];
 
+        console.log(textRef.style.height);
+
         const textBall = {
-          r: widthRef,
+          r: widthRef + 50,
           body: Bodies.circle(
             (window.innerWidth * pixelRatio) / 2,
             0,
-            widthRef + 50,
+            (widthRef + 50) / (2 / pixelRatio),
             {
-              restitution: 1,
+              restitution: 0.75,
               friction: 0.1,
               render: {
                 fillStyle: "transparent",
-                //lineWidth: 1,
-                //strokeStyle: "black",
+                // lineWidth: 1,
+                // strokeStyle: "black",
               },
             }
           ),
@@ -76,8 +82,8 @@ const InputPage = ({ colors, setMenuHidden }) => {
           render() {
             const x = this.body.position.x / pixelRatio;
             const y = this.body.position.y / pixelRatio;
-            this.elem.style.top = `${y - this.r / 2 - 25}px`;
-            this.elem.style.left = `${x - this.r / 2 - 25}px`;
+            this.elem.style.top = `${y - this.r / 2}px`;
+            this.elem.style.left = `${x - this.r / 2}px`;
             this.elem.style.transform = `rotate(${this.body.angle}rad)`;
           },
         };
@@ -140,19 +146,26 @@ const InputPage = ({ colors, setMenuHidden }) => {
       }
     );
 
+    let widthRef = inputRef.current && inputRef.current.offsetWidth;
+    let HeightRef = inputRef.current && inputRef.current.offsetHeight;
+    console.log(widthRef);
     const input = {
-      w: 364.5,
-      h: 58.5,
+      w: widthRef,
+      h: HeightRef,
       body: Bodies.rectangle(
         (window.innerWidth * pixelRatio) / 2,
         (window.innerHeight * pixelRatio) / 2,
-        364.5 * pixelRatio,
-        58.5 * pixelRatio,
+        widthRef * pixelRatio,
+        HeightRef * pixelRatio,
 
         {
           isStatic: true,
-          render: { fillStyle: "transparent" },
-          chamfer: { radius: 100 },
+          render: {
+            fillStyle: "transparent",
+            // lineWidth: 1,
+            // strokeStyle: "black",
+          },
+          chamfer: { radius: (HeightRef * pixelRatio) / 2 },
         }
       ),
       elem: inputRef.current,

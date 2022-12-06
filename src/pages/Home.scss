@@ -1,90 +1,79 @@
-@import '../utils/utils';
+@import "../utils/utils";
 
 .main-container {
-    position: relative;
-    height: calc(100vh - 51px);
-    overflow: hidden;
+  position: relative;
+  height: calc(100vh - 51px);
+  overflow: hidden;
 
-    @include mobile {
-        position: absolute;
-        top: 51px;
-        background-color: red;
-        width: 100vw;
-    }
-}
-
-.building-wrapper {
-    width: 100%;
-    height: calc(869 / 884 * 100vw);
-    max-height: 869px;
+  @include mobile {
     position: absolute;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    top: 51px;
+    background-color: red;
+    width: 100vw;
+  }
 }
 
-// 콘텐츠 이미지들
-.building {
-    height: 100%;
-    z-index: 2;
+.building-container {
+  position: absolute;
+  left: 50%;
+  width: 950px;
+  transform: translate(-50%, 0);
+  height: 92vh;
+  bottom: 0;
+  z-index: 1;
 }
 
-.eye-left {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 3;
+.street-elem1 {
+  position: absolute;
+  bottom: 0;
+  left: 100px;
+  transform: translate(-50%, 0%);
+  height: 92vh;
 }
 
-.eye-right {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: 3;
+.street-elem2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(-50%, 0%);
+  height: 45vh;
 }
 
-// .deco-left {
-//     position: absolute;
-//     left: 0;
-//     z-index: 3;
-// }
+.cloud {
+  position: absolute;
+  width: 50vw;
+}
 
-// .deco-right {
-//     position: absolute;
-//     right: 0;
-//     z-index: 3;
-// }
+.star {
+  position: absolute;
+}
 
 .deco-img-left {
-    position: absolute;
-    left: 0;
-    z-index: 3;
+  position: absolute;
+  left: 0;
+  z-index: 3;
 
-    @include mobile {
-        background-color: red;
-        width: 50vw;
-    }
-
+  @include mobile {
+    background-color: red;
+    width: 50vw;
+  }
 }
 
 .deco-img-right {
-    position: absolute;
-    right: 0;
-    z-index: 3;
+  position: absolute;
+  right: 0;
+  z-index: 3;
 
-    @include mobile {
-        background-color: red;
-        width: 50vw;
-    }
+  @include mobile {
+    background-color: red;
+    width: 50vw;
+  }
 }
-
 
 //반응형 테스트
 @media (max-width: 550px) {
-
-    .deco-img-left,
-    .deco-img-right {
-        width: 50vw;
-    }
+  .deco-img-left,
+  .deco-img-right {
+    width: 50vw;
+  }
 }

@@ -1,0 +1,13 @@
+@import "../../utils/utils";
+
+.topdeco-animation {
+  &.right {
+    position: absolute;
+    top: 0px;
+    width: 35vw;
+    height: 35vw;
+    right: 0;
+    transform: translate(30%, -70%);
+    z-index: 3;
+  }
+}

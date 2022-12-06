@@ -1,56 +1,56 @@
-@import '../../utils/utils';
+@import "../../utils/utils";
 
 .main-container {
-    .snackbar {
-        position: absolute;
-        left: 350px;
-        top: 150px;
-    }
-}
-
-.pencil-holder {
-    position: absolute;
-    left: 150px;
-    top: 150px;
-    cursor: none;
-
-    .pencil {
-        position: absolute;
-        left: 0px;
-        top: 0px;
-    }
-
-    .pencil-shadow {
-        left: 0px;
-        top: 0px;
-    }
-}
-
-.snackbar-holder {
+  .snackbar {
     position: absolute;
     left: 350px;
     top: 150px;
-    transition: 0.5s;
-    cursor: none;
-
-    .snackbar-svg {
-        position: absolute;
-        left: 0;
-        top: 0;
-    }
-
-    .snackbar-shadow {
-        left: 0;
-        top: 0;
-    }
+  }
 }
 
+.pencil-holder {
+  position: absolute;
+  left: 150px;
+  top: 150px;
+  cursor: none;
+
+  .pencil {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .pencil-shadow {
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.snackbar-holder {
+  position: absolute;
+  left: 350px;
+  top: 150px;
+  transition: 0.5s;
+  cursor: none;
+
+  .snackbar-svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .snackbar-shadow {
+    left: 0;
+    top: 0;
+  }
+}
 
 .transition-container {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    left: 100%;
-    z-index: 10;
-    transition: cubic-bezier(1, -0.01, .19, .99) 2s;
+  overflow: hidden;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left: 100%;
+  z-index: 10;
+  transition: cubic-bezier(1, -0.01, 0.19, 0.99) 2s;
 }

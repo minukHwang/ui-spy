@@ -36,7 +36,10 @@ const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden }) => {
   };
 
   let handleDeg = 0;
-  const pixelRatio = window.devicePixelRatio;
+  let pixelRatio = window.devicePixelRatio;
+  if (window.devicePixelRatio > 1) {
+    pixelRatio = 2;
+  }
   const engine = Engine.create();
   const [isUiUpdated, setIsUiUpdated] = useState(false);
   const handleClick = (e) => {
@@ -165,8 +168,8 @@ const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden }) => {
     const popup = Bodies.rectangle(
       (window.innerWidth * pixelRatio) / 4,
       0,
-      450 * pixelRatio,
-      330 * pixelRatio,
+      450 * 2,
+      330 * 2,
       {
         render: {
           sprite: {

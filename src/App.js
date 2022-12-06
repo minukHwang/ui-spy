@@ -31,6 +31,7 @@ function App() {
 
   const [isMenu, setIsMenu] = useState(false);
   const [menuHidden, setMenuHidden] = useState(false);
+  const [home, setHome] = useState(false);
 
   useEffect(() => {
     console.log(isMenu);
@@ -61,11 +62,24 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home colors={colors} setMenuHidden={setMenuHidden} />}
+          element={
+            <Home
+              home={home}
+              setHome={setHome}
+              colors={colors}
+              setMenuHidden={setMenuHidden}
+            />
+          }
         />
         <Route
           path="/menu"
-          element={<Menu colors={colors} setMenuHidden={setMenuHidden} />}
+          element={
+            <Menu
+              setHome={setHome}
+              colors={colors}
+              setMenuHidden={setMenuHidden}
+            />
+          }
         />
         <Route
           path="/bbopgi"
