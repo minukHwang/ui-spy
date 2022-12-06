@@ -8,7 +8,7 @@ import { ReactComponent as Navigation } from "../../static/svg/stickers/navigati
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Sticker = ({ colors, setMenuHidden }) => {
+const Sticker = ({ colors, setMenuHidden, setMenu }) => {
   const [allowMove, setAllowMove] = useState();
   const stickerRef1 = useRef();
   const stickerRef2 = useRef();
@@ -20,6 +20,7 @@ const Sticker = ({ colors, setMenuHidden }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    setMenu(false);
     setMenuHidden(false);
   }, []);
 

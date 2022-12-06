@@ -9,7 +9,7 @@ import { useState, useRef } from "react";
 import Snackbar from "../../components/uiitems/Snackbar";
 import { useNavigate } from "react-router-dom";
 
-const Stationery = ({ colors, setMenuHidden }) => {
+const Stationery = ({ colors, setMenuHidden, setMenu }) => {
   const [allowClippath, setAllowClippath] = useState(false);
   const [allowClicked, setAllowClicked] = useState(false);
   const [reveal, setReveal] = useState(true);
@@ -27,6 +27,7 @@ const Stationery = ({ colors, setMenuHidden }) => {
   };
 
   useEffect(() => {
+    setMenu(false);
     setAllowClicked(false);
     setMenuHidden(false);
   }, []);

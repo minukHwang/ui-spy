@@ -3,8 +3,10 @@ import "./MenuTab.scss";
 import { useState, useEffect } from "react";
 import { ReactComponent as Light } from "../static/svg/light.svg";
 import { useNavigate } from "react-router-dom";
+import StickersAnim from "./animation/StickersAnim";
+import StationeryAnim from "./animation/StationeryAnim";
 
-const MenuTab = ({ colors, title }) => {
+const MenuTab = ({ colors, title, home, menu }) => {
   const colorSet = [
     [
       colors.green,
@@ -79,7 +81,16 @@ const MenuTab = ({ colors, title }) => {
           </div>
         </div>
       </div>
-
+      {title === "Sticker" ? (
+        <StickersAnim menu={menu} home={home}></StickersAnim>
+      ) : (
+        ""
+      )}
+      {title === "Stationery" ? (
+        <StationeryAnim menu={menu} home={home}></StationeryAnim>
+      ) : (
+        ""
+      )}
       {/* <Light className="light"></Light> */}
     </div>
   );

@@ -32,6 +32,7 @@ function App() {
   const [isMenu, setIsMenu] = useState(false);
   const [menuHidden, setMenuHidden] = useState(false);
   const [home, setHome] = useState(false);
+  const [menu, setMenu] = useState(false);
 
   useEffect(() => {
     console.log(isMenu);
@@ -52,6 +53,7 @@ function App() {
       ) : (
         <Mobile>
           <Navbar
+            setMenu={setMenu}
             isMenu={isMenu}
             menuHidden={menuHidden}
             setIsMenu={setIsMenu}
@@ -68,6 +70,7 @@ function App() {
               setHome={setHome}
               colors={colors}
               setMenuHidden={setMenuHidden}
+              setMenu={setMenu}
             />
           }
         />
@@ -75,9 +78,12 @@ function App() {
           path="/menu"
           element={
             <Menu
+              home={home}
               setHome={setHome}
               colors={colors}
               setMenuHidden={setMenuHidden}
+              menu={menu}
+              setMenu={setMenu}
             />
           }
         />
@@ -89,16 +95,29 @@ function App() {
               isMenu={isMenu}
               setIsMenu={setIsMenu}
               setMenuHidden={setMenuHidden}
+              setMenu={setMenu}
             />
           }
         />
         <Route
           path="/stationery"
-          element={<Stationery colors={colors} setMenuHidden={setMenuHidden} />}
+          element={
+            <Stationery
+              setMenu={setMenu}
+              colors={colors}
+              setMenuHidden={setMenuHidden}
+            />
+          }
         />
         <Route
           path="/sticker"
-          element={<Sticker colors={colors} setMenuHidden={setMenuHidden} />}
+          element={
+            <Sticker
+              setMenu={setMenu}
+              colors={colors}
+              setMenuHidden={setMenuHidden}
+            />
+          }
         />
         <Route
           path="/bbopgi/popup"
@@ -151,6 +170,7 @@ function App() {
       ) : (
         <Desktop>
           <Navbar
+            menu={menu}
             isMenu={isMenu}
             setIsMenu={setIsMenu}
             menuHidden={menuHidden}

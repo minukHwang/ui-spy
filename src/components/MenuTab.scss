@@ -5,10 +5,14 @@
     cursor: pointer;
 
     .sign-area {
+        position: absolute;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        left: 50%;
+        transform: translate(-50%);
+        z-index: 3;
 
         .lines {
             height: 85px;

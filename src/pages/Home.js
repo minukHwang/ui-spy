@@ -13,7 +13,7 @@ import TopDecoLeft from "../components/animation/TopDecoLeft";
 import TopDecoRight from "../components/animation/TopDecoRight";
 import { useNavigate } from "react-router-dom";
 
-const Home = ({ colors, home, setHome }) => {
+const Home = ({ colors, home, setHome, setMenu }) => {
   const [scrollNum, setScrollNum] = useState(0);
   const [zoomScale, setZoomScale] = useState(0);
   const navigate = useNavigate();
@@ -81,6 +81,7 @@ const Home = ({ colors, home, setHome }) => {
     console.log(zoomScale);
   };
   useEffect(() => {
+    setMenu(false);
     setHome(true);
     if (zoomScale > 10000) {
       navigate("/menu");

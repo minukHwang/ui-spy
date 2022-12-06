@@ -23,7 +23,7 @@ import { useNavigate } from "react-router-dom";
 import { ReactComponent as Handle } from "../../static/svg/handle.svg";
 import { ReactComponent as EyeOrange } from "../../static/svg/eye-orange.svg";
 
-const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden }) => {
+const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden, setMenu }) => {
   const canvasRef = useRef(null);
   const handleRef = useRef();
   const holderRef = useRef();
@@ -86,6 +86,7 @@ const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden }) => {
   useEffect(() => {
     setMenuHidden(false);
     setIsMenu(false);
+    setMenu(false);
     const canvas = canvasRef.current;
 
     // Renderer

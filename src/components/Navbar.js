@@ -3,7 +3,7 @@ import "./Navbar.scss";
 import { ReactComponent as Logo } from "../static/svg/Logo.svg";
 import { useNavigate } from "react-router-dom";
 
-const Navbar = ({ isMenu, setIsMenu, menuHidden, setMenuHidden }) => {
+const Navbar = ({ isMenu, setIsMenu, menuHidden, setMenuHidden, menu }) => {
   const navRef = useRef();
 
   const navigate = useNavigate();
