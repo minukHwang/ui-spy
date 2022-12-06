@@ -31,7 +31,11 @@ const NavigationPage = ({ colors, setMenuHidden }) => {
         icon3="icon3"
         icon4="icon4"
       ></Navigation>
-      <CloseBtn linkTo="sticker"></CloseBtn>
+      <CloseBtn
+        linkTo="sticker"
+        color={colors.orange}
+        hoverColor={colors.red}
+      ></CloseBtn>
     </div>
   );
 };

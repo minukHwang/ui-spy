@@ -1,12 +1,12 @@
 @import "../../utils/utils";
 
-.stickers-animation {
-    position: absolute;
-    height: calc(100vh - 51px);
-    top: 0;
-    z-index: 0;
+.stationery-animation {
+  position: absolute;
+  height: calc(100vh - 51px);
+  top: 0;
+  z-index: 0;
 
-    svg {
-        overflow: visible;
-    }
+  svg {
+    overflow: visible;
+  }
 }

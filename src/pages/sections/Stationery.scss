@@ -10,8 +10,11 @@
 
 .pencil-holder {
   position: absolute;
-  left: 150px;
-  top: 150px;
+  left: 187.93px;
+  top: 224px;
+
+  transform: rotate(5.84deg);
+
   cursor: none;
 
   .pencil {
@@ -28,8 +31,8 @@
 
 .snackbar-holder {
   position: absolute;
-  left: 350px;
-  top: 150px;
+  left: 397px;
+  top: 112px;
   transition: 0.5s;
   cursor: none;
 
@@ -42,6 +45,292 @@
   .snackbar-shadow {
     left: 0;
     top: 0;
+  }
+}
+
+.breadcrumb-holder {
+  position: absolute;
+  left: 1508px;
+  top: 1129px;
+  transition: 0.5s;
+  cursor: none;
+
+  .breadcrumb-svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .breadcrumb-shadow {
+    left: 0;
+    top: 0;
+  }
+}
+
+.holder1 {
+  position: absolute;
+  left: 114px;
+  top: 864px;
+
+  transform: rotate(-17.73deg);
+
+  cursor: none;
+
+  .object1 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .shadow1 {
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.holder2 {
+  position: absolute;
+  left: 574.35px;
+  top: 762px;
+
+  transform: rotate(38.85deg);
+
+  cursor: none;
+
+  .object2 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .shadow2 {
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.holder3 {
+  position: absolute;
+  left: 395.04px;
+  top: 352.92px;
+
+  transform: rotate(11.46deg);
+
+  cursor: none;
+
+  .object3 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .shadow3 {
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.holder4 {
+  position: absolute;
+  left: 847.46px;
+  top: 616px;
+
+  transform: rotate(6.28deg);
+
+  cursor: none;
+
+  .object4 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .shadow4 {
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.holder5 {
+  position: absolute;
+  width: 223.68px;
+  height: 223.68px;
+  left: 877.66px;
+  top: 282.66px;
+
+  cursor: none;
+
+  .object5 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .shadow5 {
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.holder6 {
+  position: absolute;
+  left: 1277.22px;
+  top: 62.67px;
+
+  transform: rotate(14.1deg);
+
+  cursor: none;
+
+  .object6 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .shadow6 {
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.holder7 {
+  position: absolute;
+  left: 1149.26px;
+  top: 649.46px;
+
+  transform: rotate(-17.07deg);
+
+  cursor: none;
+
+  .object7 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .shadow7 {
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.holder8 {
+  position: absolute;
+  left: 1557px;
+  top: 99.68px;
+
+  transform: rotate(-5deg);
+
+  cursor: none;
+
+  .object8 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .shadow8 {
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.holder9 {
+  position: absolute;
+  left: 1650px;
+  top: 522.83px;
+
+  transform: rotate(-11.45deg);
+
+  cursor: none;
+
+  .object9 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .shadow9 {
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.holder10 {
+  position: absolute;
+  left: 1896px;
+  top: 385px;
+
+  cursor: none;
+
+  .object10 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .shadow10 {
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.holder11 {
+  position: absolute;
+  left: 2089.47px;
+  top: 123.64px;
+
+  transform: rotate(11.87deg);
+
+  cursor: none;
+
+  .object11 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .shadow11 {
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.holder12 {
+  position: absolute;
+  left: 2146px;
+  top: 600.11px;
+
+  cursor: none;
+
+  .object12 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .shadow12 {
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.holder13 {
+  position: absolute;
+  left: 2155px;
+  top: 942px;
+
+  cursor: none;
+
+  .object13 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .shadow13 {
+    left: 0px;
+    top: 0px;
   }
 }
 

@@ -1,29 +1,143 @@
-@import '../../utils/utils';
-
-
+@import "../../utils/utils";
 
 .sticker1 {
-    position: absolute;
-    left: 150px;
-    top: 150px;
-    cursor: move;
-    transition: 0s;
-    z-index: 1;
+  position: absolute;
+  left: 773.469px;
+  top: 242.469px;
+  cursor: move;
+  transition: 0s;
+  z-index: 1;
 }
 
 .sticker2 {
-    position: absolute;
-    left: 500px;
-    top: 500px;
-    cursor: move;
-    transition: 0s;
-    z-index: 1;
+  position: absolute;
+  left: 427px;
+  top: 214px;
+  cursor: move;
+  transition: 0s;
+  z-index: 1;
+  transform: rotate(10deg);
+}
+
+.sticker3 {
+  position: absolute;
+  left: 1010.3px;
+  top: 582.315px;
+  cursor: move;
+  transition: 0s;
+  z-index: 2;
+  transform: rotate(5deg);
+}
+
+.sticker4 {
+  position: absolute;
+  left: 738.406px;
+  top: 641.26px;
+  cursor: move;
+  transition: 0s;
+  z-index: 1;
+}
+
+.sticker5 {
+  position: absolute;
+  left: 235px;
+  top: 397px;
+  cursor: move;
+  transition: 0s;
+  z-index: 1;
+  transform: rotate(-30deg);
+}
+
+.sticker6 {
+  position: absolute;
+  left: 1480.57px;
+  top: 94.1875px;
+  cursor: move;
+  transition: 0s;
+  z-index: 1;
+  transform: rotate(30deg);
+}
+
+.sticker7 {
+  position: absolute;
+  left: 461.771px;
+  top: 895.24px;
+  cursor: move;
+  transition: 0s;
+  z-index: 1;
+  transform: rotate(3deg);
+}
+
+.sticker8 {
+  position: absolute;
+  left: 1240.21px;
+  top: 66.7396px;
+  cursor: move;
+  transition: 0s;
+  z-index: 1;
+}
+
+.sticker9 {
+  position: absolute;
+  left: 1425.39px;
+  top: 687.167px;
+  cursor: move;
+  transition: 0s;
+  z-index: 2;
+  transform: rotate(-20deg);
+}
+
+.sticker10 {
+  position: absolute;
+  left: 1899.52px;
+  top: 205.208px;
+  cursor: move;
+  transition: 0s;
+  z-index: 1;
+  transform: rotate(30deg);
+}
+
+.sticker11 {
+  position: absolute;
+  left: 1770px;
+  top: 741px;
+  cursor: move;
+  transition: 0s;
+  z-index: 1;
+}
+
+.sticker12 {
+  position: absolute;
+  left: 1051.66px;
+  top: 117.875px;
+  cursor: move;
+  transition: 0s;
+  z-index: 1;
+  transform: rotate(10deg);
+}
+
+.sticker13 {
+  position: absolute;
+  left: 1289px;
+  top: 460px;
+  cursor: move;
+  transition: 0s;
+  z-index: 1;
+  transform: rotate(5deg);
 }
 
 .navigation-svg {
-    position: absolute;
-    left: 500px;
-    top: 250px;
-    z-index: 0;
-    transition: 0.5s;
+  position: absolute;
+  left: 500px;
+  top: 250px;
+  z-index: 0;
+  transition: 0.5s;
+}
+
+.toggle-svg {
+  position: absolute;
+  left: 1500px;
+  top: 850px;
+  z-index: 0;
+  transition: 0.5s;
 }

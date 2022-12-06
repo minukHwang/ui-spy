@@ -13,10 +13,16 @@ import {
   MouseConstraint,
 } from "matter-js";
 import eyeball from "../../static/img/eye.png";
+import eyeball2 from "../../static/img/eye2.png";
 import basketball from "../../static/img/basketball.png";
 import capsuleball from "../../static/img/capsuleball.png";
+import capsuleball2 from "../../static/img/capsuleball2.png";
 import popupimg from "../../static/img/popup.png";
+import inputimg from "../../static/img/input.png";
+import buttonimg from "../../static/img/button.png";
 import Popup from "../../components/uiitems/Popup";
+import Input from "../../components/uiitems/Input";
+import Button from "../../components/uiitems/Button";
 import TextBox from "../../components/TextBox";
 import { useNavigate } from "react-router-dom";
 
@@ -27,12 +33,14 @@ const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden, setMenu }) => {
   const canvasRef = useRef(null);
   const handleRef = useRef();
   const holderRef = useRef();
+  const holderRef2 = useRef();
+  const holderRef3 = useRef();
   const containerRef = useRef();
   const transitionRef = useRef();
 
   const navigate = useNavigate();
-  const goToPage = (title) => {
-    navigate(`/bbopgi/popup`);
+  const goToPage = (link) => {
+    navigate(`/bbopgi/${link}`);
   };
 
   let handleDeg = 0;
@@ -42,15 +50,27 @@ const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden, setMenu }) => {
   }
   const engine = Engine.create();
   const [isUiUpdated, setIsUiUpdated] = useState(false);
+  const [isLink, setIsLink] = useState("");
   const handleClick = (e) => {
     handleDeg += 360;
     handleRef.current.style.rotate = handleDeg + "deg";
+
     const eye = Bodies.circle((window.innerWidth * pixelRatio) / 4, 0, 225, {
       restitution: 0.5,
       friction: 0.2,
       render: {
         sprite: {
           texture: eyeball,
+        },
+      },
+    });
+
+    const eye2 = Bodies.circle((window.innerWidth * pixelRatio) / 4, 0, 225, {
+      restitution: 0.5,
+      friction: 0.2,
+      render: {
+        sprite: {
+          texture: eyeball2,
         },
       },
     });
@@ -78,12 +98,26 @@ const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden, setMenu }) => {
       }
     );
 
-    const circles = [eye, ball, capsule];
-    Composite.add(engine.world, [circles[Math.floor(Math.random() * 3)]]);
+    const capsule2 = Bodies.circle(
+      (window.innerWidth * pixelRatio) / 4,
+      0,
+      225,
+      {
+        render: {
+          sprite: {
+            texture: capsuleball2,
+          },
+        },
+      }
+    );
+
+    const circles = [eye, ball, capsule, eye2, capsule2];
+    Composite.add(engine.world, [circles[Math.floor(Math.random() * 5)]]);
   };
 
   //matter.js
   useEffect(() => {
+    handleRef.current.onclick = (e) => handleClick(e);
     setMenuHidden(false);
     setIsMenu(false);
     setMenu(false);
@@ -112,7 +146,27 @@ const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden, setMenu }) => {
       },
     });
 
+    const eye2 = Bodies.circle((window.innerWidth * pixelRatio) / 4, 0, 225, {
+      restitution: 0.5,
+      friction: 0.2,
+      render: {
+        sprite: {
+          texture: eyeball2,
+        },
+      },
+    });
+
     const ball = Bodies.circle((window.innerWidth * pixelRatio) / 3, 0, 225, {
+      restitution: 1,
+      friction: 0.1,
+      render: {
+        sprite: {
+          texture: basketball,
+        },
+      },
+    });
+
+    const ball2 = Bodies.circle((window.innerWidth * pixelRatio) / 3, 0, 225, {
       restitution: 1,
       friction: 0.1,
       render: {
@@ -134,6 +188,20 @@ const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden, setMenu }) => {
         },
       }
     );
+
+    const capsule2 = Bodies.circle(
+      (window.innerWidth * pixelRatio) / 4,
+      0,
+      225,
+      {
+        render: {
+          sprite: {
+            texture: capsuleball2,
+          },
+        },
+      }
+    );
+
     console.log(capsule);
 
     const leftWall = Bodies.rectangle(
@@ -169,8 +237,8 @@ const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden, setMenu }) => {
     const popup = Bodies.rectangle(
       (window.innerWidth * pixelRatio) / 4,
       0,
-      450 * 2,
-      330 * 2,
+      432 * 2,
+      310 * 2,
       {
         render: {
           sprite: {
@@ -181,23 +249,35 @@ const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden, setMenu }) => {
       }
     );
 
-    const popup2 = {
-      w: 431.5,
-      h: 314.25,
-      body: Bodies.rectangle(
-        (window.innerWidth * pixelRatio) / 4,
-        0,
-        431.5,
-        314.25
-      ),
-      elem: document.querySelector(".pop-up"),
-      render() {
-        const { x, y } = this.body.position;
-        this.elem.style.top = `${y - this.h / 2}px`;
-        this.elem.style.left = `${x - this.w / 2}px`;
-        this.elem.style.transform = `rotate(${this.body.angle}rad)`;
-      },
-    };
+    const input = Bodies.rectangle(
+      (window.innerWidth * pixelRatio) / 4,
+      0,
+      556 * 2,
+      73 * 2,
+      {
+        render: {
+          sprite: {
+            texture: inputimg,
+          },
+        },
+        chamfer: { radius: 73 / 2 },
+      }
+    );
+
+    const button = Bodies.rectangle(
+      (window.innerWidth * pixelRatio) / 4,
+      0,
+      516 * 2,
+      68 * 2,
+      {
+        render: {
+          sprite: {
+            texture: buttonimg,
+          },
+        },
+        chamfer: { radius: 10 },
+      }
+    );
 
     // MouseConstraint
     let mouse = Mouse.create(render.canvas);
@@ -233,6 +313,7 @@ const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden, setMenu }) => {
         setIsMenu(true);
         Composite.remove(engine.world, [ground]);
         setIsUiUpdated(true);
+        setIsLink("popup");
         canvasRef.current.style.cursor = "pointer";
         setTimeout(() => {
           holderRef.current.style.top = 0;
@@ -241,7 +322,75 @@ const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden, setMenu }) => {
           console.log(isMenu);
         }, 50);
         setTimeout(() => {
-          goToPage();
+          goToPage("popup");
+        }, 3000);
+      }
+    });
+
+    Events.on(mouseConstraint, "mousedown", (e) => {
+      console.log(e.source.mouse.position.x, e.source.mouse.position.y);
+      let mouseX = e.source.mouse.position.x;
+      let mouseY = e.source.mouse.position.y;
+
+      let inputXMax = input.bounds.max.x;
+      let inputXMin = input.bounds.min.x;
+      let inputYMax = input.bounds.max.y;
+      let inputYMin = input.bounds.min.y;
+
+      console.log(inputXMax, inputXMin, inputYMax, inputYMin);
+
+      if (
+        mouseX <= inputXMax &&
+        mouseX >= inputXMin &&
+        mouseY <= inputYMax &&
+        mouseY >= inputYMin
+      ) {
+        setIsMenu(true);
+        Composite.remove(engine.world, [ground]);
+        setIsUiUpdated(true);
+        setIsLink("input");
+        canvasRef.current.style.cursor = "pointer";
+        setTimeout(() => {
+          holderRef2.current.style.top = 0;
+          transitionRef.current.style.left = "0%";
+          //containerRef.current.style.backgroundColor = colors.pink;
+          console.log(isMenu);
+        }, 50);
+        setTimeout(() => {
+          goToPage("input");
+        }, 3000);
+      }
+    });
+
+    Events.on(mouseConstraint, "mousedown", (e) => {
+      console.log(e.source.mouse.position.x, e.source.mouse.position.y);
+      let mouseX = e.source.mouse.position.x;
+      let mouseY = e.source.mouse.position.y;
+
+      let buttonXMax = button.bounds.max.x;
+      let buttonXMin = button.bounds.min.x;
+      let buttonYMax = button.bounds.max.y;
+      let buttonYMin = button.bounds.min.y;
+
+      if (
+        mouseX <= buttonXMax &&
+        mouseX >= buttonXMin &&
+        mouseY <= buttonYMax &&
+        mouseY >= buttonYMin
+      ) {
+        setIsMenu(true);
+        Composite.remove(engine.world, [ground]);
+        setIsUiUpdated(true);
+        setIsLink("button");
+        canvasRef.current.style.cursor = "pointer";
+        setTimeout(() => {
+          holderRef3.current.style.top = 0;
+          transitionRef.current.style.left = "0%";
+          //containerRef.current.style.backgroundColor = colors.pink;
+          console.log(isMenu);
+        }, 50);
+        setTimeout(() => {
+          goToPage("button");
         }, 3000);
       }
     });
@@ -256,11 +405,29 @@ const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden, setMenu }) => {
       let popupYMax = popup.bounds.max.y;
       let popupYMin = popup.bounds.min.y;
 
+      let inputXMax = input.bounds.max.x;
+      let inputXMin = input.bounds.min.x;
+      let inputYMax = input.bounds.max.y;
+      let inputYMin = input.bounds.min.y;
+
+      let buttonXMax = button.bounds.max.x;
+      let buttonXMin = button.bounds.min.x;
+      let buttonYMax = button.bounds.max.y;
+      let buttonYMin = button.bounds.min.y;
+
       if (
-        mouseX <= popupXMax &&
-        mouseX >= popupXMin &&
-        mouseY <= popupYMax &&
-        mouseY >= popupYMin
+        (mouseX <= popupXMax &&
+          mouseX >= popupXMin &&
+          mouseY <= popupYMax &&
+          mouseY >= popupYMin) ||
+        (mouseX <= inputXMax &&
+          mouseX >= inputXMin &&
+          mouseY <= inputYMax &&
+          mouseY >= inputYMin) ||
+        (mouseX <= buttonXMax &&
+          mouseX >= buttonXMin &&
+          mouseY <= buttonYMax &&
+          mouseY >= buttonYMin)
       ) {
         canvasRef.current.style.cursor = "pointer";
       } else {
@@ -271,12 +438,16 @@ const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden, setMenu }) => {
     // add bodies to the world
     Composite.add(engine.world, [
       eye,
+      eye2,
       capsule,
+      capsule2,
       ball,
       ground,
       leftWall,
       rightWall,
       popup,
+      input,
+      button,
       mouseConstraint,
     ]);
 
@@ -308,18 +479,56 @@ const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden, setMenu }) => {
 
   return (
     <div className="page-container">
-      {isUiUpdated ? (
+      {isUiUpdated && isLink === "popup" ? (
         <div className="ui-holder" ref={holderRef}>
-          <Popup data-html-matter></Popup>
+          <Popup></Popup>
         </div>
       ) : (
         ""
       )}
-      {isUiUpdated ? (
+      {isUiUpdated && isLink === "popup" ? (
         <div
           className="transition-container"
           ref={transitionRef}
           style={{ backgroundColor: colors.blue }}
+        >
+          {" "}
+        </div>
+      ) : (
+        ""
+      )}
+
+      {isUiUpdated && isLink === "input" ? (
+        <div className="ui-holder" ref={holderRef2}>
+          <Input></Input>
+        </div>
+      ) : (
+        ""
+      )}
+      {isUiUpdated && isLink === "input" ? (
+        <div
+          className="transition-container"
+          ref={transitionRef}
+          style={{ backgroundColor: colors.orange }}
+        >
+          {" "}
+        </div>
+      ) : (
+        ""
+      )}
+
+      {isUiUpdated && isLink === "button" ? (
+        <div className="ui-holder" ref={holderRef3}>
+          <Button></Button>
+        </div>
+      ) : (
+        ""
+      )}
+      {isUiUpdated && isLink === "button" ? (
+        <div
+          className="transition-container"
+          ref={transitionRef}
+          style={{ backgroundColor: colors.yellow }}
         >
           {" "}
         </div>
@@ -334,11 +543,7 @@ const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden, setMenu }) => {
         <TextBox item={["popup", "input", "button"]}></TextBox>
         <div className="handle-wall">
           <div className="handle-holder">
-            <Handle
-              className="handle"
-              ref={handleRef}
-              onClick={handleClick}
-            ></Handle>
+            <Handle className="handle" ref={handleRef}></Handle>
           </div>
           {/* <div className="bbopgi-exit">
           <EyeOrange className="eye-orange"></EyeOrange>

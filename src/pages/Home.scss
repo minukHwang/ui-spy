@@ -16,11 +16,16 @@
 .building-container {
   position: absolute;
   left: 50%;
-  width: 950px;
+  width: 1200px;
   transform: translate(-50%, 0);
   height: 92vh;
   bottom: 0;
-  z-index: 1;
+  &.one {
+    z-index: 2;
+  }
+  &.two {
+    z-index: 4;
+  }
 }
 
 .street-elem1 {
@@ -29,23 +34,57 @@
   left: 100px;
   transform: translate(-50%, 0%);
   height: 92vh;
+  z-index: 2;
+  path {
+    stroke-width: 0.5;
+  }
 }
 
 .street-elem2 {
   position: absolute;
   bottom: 0;
   right: 0;
-  transform: translate(-50%, 0%);
+  transform: translate(-30%, 0%);
   height: 45vh;
+  width: auto;
+  z-index: 4;
+  path {
+    stroke-width: 0.5;
+  }
 }
 
 .cloud {
   position: absolute;
-  width: 50vw;
+  height: 11vh;
+  width: auto;
+  &.one {
+    z-index: 3;
+  }
+  &.two {
+    z-index: 1;
+  }
+
+  path {
+    stroke-width: 0.35;
+  }
+}
+
+.ui-elem {
+  position: absolute;
+  z-index: 4;
+  path {
+    stroke-width: 0.35;
+  }
 }
 
 .star {
   position: absolute;
+  height: 7vh;
+  width: auto;
+  z-index: 0;
+  path {
+    stroke-width: 0.5;
+  }
 }
 
 .deco-img-left {

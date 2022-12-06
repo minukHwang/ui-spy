@@ -8,7 +8,13 @@ const Navbar = ({ isMenu, setIsMenu, menuHidden, setMenuHidden, menu }) => {
 
   const navigate = useNavigate();
 
-  const goToPage = (title) => {
+  const goToMenu = (title) => {
+    if (!isMenu && !menu) {
+      navigate(title);
+    }
+  };
+
+  const goToHome = (title) => {
     if (!isMenu) {
       navigate(title);
     }
@@ -16,13 +22,14 @@ const Navbar = ({ isMenu, setIsMenu, menuHidden, setMenuHidden, menu }) => {
 
   return (
     <div className="nav-container" ref={navRef}>
-      <Logo className="logo" />
+      <Logo className="logo" onClick={() => goToHome("/")} />
+      <div className="text">A New Format To Learn UI</div>
       <div className="links">
-        <div className="link-button" onClick={() => goToPage("/")}>
+        <div className="link-button" onClick={() => goToHome("/")}>
           {" "}
           Home{" "}
         </div>
-        <div className="link-button" onClick={() => goToPage("/menu")}>
+        <div className="link-button" onClick={() => goToMenu("/menu")}>
           {" "}
           Menu{" "}
         </div>

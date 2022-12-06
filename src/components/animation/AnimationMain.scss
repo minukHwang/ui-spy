@@ -4,6 +4,11 @@
   position: absolute;
   bottom: 0;
   width: 100vw;
-  height: 90vh;
-  z-index: 2;
+  height: 82vh;
+  z-index: 5;
+  svg {
+    path {
+      stroke-width: 0.5;
+    }
+  }
 }

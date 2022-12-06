@@ -5,6 +5,7 @@ import { ReactComponent as Light } from "../static/svg/light.svg";
 import { useNavigate } from "react-router-dom";
 import StickersAnim from "./animation/StickersAnim";
 import StationeryAnim from "./animation/StationeryAnim";
+import BbopgiAnim from "./animation/BbopgiAnim";
 
 const MenuTab = ({ colors, title, home, menu }) => {
   const colorSet = [
@@ -88,6 +89,11 @@ const MenuTab = ({ colors, title, home, menu }) => {
       )}
       {title === "Stationery" ? (
         <StationeryAnim menu={menu} home={home}></StationeryAnim>
+      ) : (
+        ""
+      )}
+      {title === "Bbopgi" ? (
+        <BbopgiAnim menu={menu} home={home}></BbopgiAnim>
       ) : (
         ""
       )}

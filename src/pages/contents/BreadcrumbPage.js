@@ -81,7 +81,7 @@ const BreadcrumbPage = ({ colors, setMenuHidden }) => {
           linkRef1.current.style.color = colors.blue;
           linkRef2.current.style.color = "";
           linkRef3.current.style.color = "";
-          folderRef.current.style.scale = 3.5;
+          folderRef.current.style.scale = 5.5;
           folderRef2.current.style.scale = 1;
           folderRef3.current.style.scale = 0;
           folderRef4.current.style.scale = 0;
@@ -91,7 +91,7 @@ const BreadcrumbPage = ({ colors, setMenuHidden }) => {
           linkRef1.current.style.color = "";
           linkRef2.current.style.color = colors.green;
           linkRef3.current.style.color = "";
-          folderRef2.current.style.scale = 3.5;
+          folderRef2.current.style.scale = 5.5;
           folderRef3.current.style.scale = 1;
           folderRef4.current.style.scale = 0;
           break;
@@ -100,7 +100,7 @@ const BreadcrumbPage = ({ colors, setMenuHidden }) => {
           linkRef1.current.style.color = "";
           linkRef2.current.style.color = "";
           linkRef3.current.style.color = colors.pink;
-          folderRef3.current.style.scale = 3.5;
+          folderRef3.current.style.scale = 5.5;
           folderRef4.current.style.scale = 1;
           break;
         default:
