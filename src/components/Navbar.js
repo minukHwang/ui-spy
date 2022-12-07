@@ -23,7 +23,7 @@ const Navbar = ({ isMenu, setIsMenu, menuHidden, setMenuHidden, menu }) => {
   return (
     <div className="nav-container" ref={navRef}>
       <Logo className="logo" onClick={() => goToHome("/")} />
-      <div className="text">A New Format To Learn UI</div>
+      {/* <div className="text">A New Format To Learn UI</div> */}
       <div className="links">
         <div className="link-button" onClick={() => goToHome("/")}>
           {" "}
