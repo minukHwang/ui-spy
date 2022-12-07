@@ -447,7 +447,7 @@ const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden, setMenu }) => {
       rightWall,
       popup,
       input,
-      button,
+      //button,
       mouseConstraint,
     ]);
 
@@ -540,7 +540,7 @@ const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden, setMenu }) => {
         ref={containerRef}
         style={{ backgroundColor: colors.blue }}
       >
-        <TextBox item={["popup", "input", "button"]}></TextBox>
+        <TextBox item={["popup", "input"]}></TextBox>
         <div className="handle-wall">
           <div className="handle-holder">
             <Handle className="handle" ref={handleRef}></Handle>

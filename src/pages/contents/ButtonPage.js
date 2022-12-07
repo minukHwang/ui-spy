@@ -12,7 +12,8 @@ const ButtonPage = ({ colors, setMenuHidden }) => {
     "Okay, two click is fine.",
     "Stop!!",
     "Whatever, I don’t care",
-    "I’m just going to count it.",
+    "I warned you",
+    "Don't Click This Button.",
   ];
 
   useEffect(() => {
