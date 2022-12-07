@@ -154,7 +154,6 @@ const Home = ({ colors, home, setHome, setMenu }) => {
     console.log(zoomScale);
   };
   useEffect(() => {
-    alert("베타 버전이라 버그가 많을 수 있습니다! 즐거운 체험 되세요 :)");
     setMenu(false);
     setHome(true);
     if (zoomScale > 10000) {

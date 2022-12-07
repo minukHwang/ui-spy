@@ -1,11 +1,37 @@
-@import '../../utils/utils';
+@import "../../utils/utils";
 
 .contents-container {
-    .navigation {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 10;
+  .navigation {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+
+  .page-holder {
+    display: flex;
+    position: absolute;
+    transition: $bounce;
+    .page {
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+      &.pink {
+        background-color: $pink;
+      }
+      &.red {
+        background-color: $red;
+      }
+      &.blue {
+        background-color: $blue;
+      }
+      &.yellow {
+        background-color: $yellow;
+      }
+      &.green {
+        background-color: $green;
+      }
     }
+  }
 }
