@@ -48,11 +48,11 @@ const Sticker = ({ colors, setMenuHidden, setMenu }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    setMenu(false);
+    setMenuHidden(false);
     alert(
       "스티커속에 UI 요소를 찾아 더블 클릭해보세요! \n마우스가 원할히 작동하지 않는다면, 새로고침을 눌러주세요"
     );
-    setMenu(false);
-    setMenuHidden(false);
   }, []);
 
   const goToPage = (title) => {
