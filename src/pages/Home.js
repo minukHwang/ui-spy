@@ -154,6 +154,9 @@ const Home = ({ colors, home, setHome, setMenu }) => {
     console.log(zoomScale);
   };
   useEffect(() => {
+    alert(
+      "UI SPY는 User Interface를 쉽게 이해할 수 있도록하는 인터랙션 웹페이지 입니다. /n 체험을 원하신다면 하단 메뉴탭으로 이동해주세요!"
+    );
     setMenu(false);
     setHome(true);
     if (zoomScale > 10000) {
