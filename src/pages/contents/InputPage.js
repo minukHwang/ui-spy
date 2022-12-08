@@ -101,6 +101,7 @@ const InputPage = ({ colors, setMenuHidden }) => {
   //.onkeypress = handleClick;
 
   useEffect(() => {
+    alert("인풋 요소에 타이핑을 해보세요!");
     inputRef.current.firstChild.onkeypress = (e) => handleBall(e);
     setMenuHidden(true);
     const canvas = canvasRef.current;

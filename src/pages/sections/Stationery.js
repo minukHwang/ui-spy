@@ -117,6 +117,7 @@ const Stationery = ({ colors, setMenuHidden, setMenu }) => {
   };
 
   useEffect(() => {
+    alert("UI 요소를 찾아 더블 클릭해보세요!");
     setMenu(false);
     setAllowClicked(false);
     setMenuHidden(false);

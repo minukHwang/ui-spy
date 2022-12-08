@@ -117,6 +117,7 @@ const Bbopgi = ({ colors, isMenu, setIsMenu, setMenuHidden, setMenu }) => {
 
   //matter.js
   useEffect(() => {
+    alert("UI 요소를 찾아보세요!");
     handleRef.current.onclick = (e) => handleClick(e);
     setMenuHidden(false);
     setIsMenu(false);
