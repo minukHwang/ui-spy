@@ -6,6 +6,6 @@ UI 용어를 인터랙션으로 학습할 수 있는 인터랙티브 웹 프로�
 
 <div>
     <a href="https://youtu.be/FHOyQGZ7Fbk?si=BbkwUqKXtkPBbXQA">
-        시연 영상
+        시연 영상 보러가기
     </a>
 </div>
