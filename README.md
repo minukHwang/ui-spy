@@ -4,6 +4,6 @@ Developed an interactive website to facilitate easy learning of UI architecture 
 
 <div>
     <a href="https://youtu.be/FHOyQGZ7Fbk?si=BbkwUqKXtkPBbXQA">
-        <img src="./assets/ui-spy.png" alt="ui-spy" />
+        시연 영상
     </a>
 </div>
