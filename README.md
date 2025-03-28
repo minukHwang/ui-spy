@@ -1,4 +1,4 @@
-#UI SPY
+# UI SPY
 
 Developed an interactive website to facilitate easy learning of UI architecture terms.
 
